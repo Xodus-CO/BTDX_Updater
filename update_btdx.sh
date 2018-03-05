@@ -101,4 +101,3 @@ echo 'Masternode has been updated!'
 
 self_update
 main
-
