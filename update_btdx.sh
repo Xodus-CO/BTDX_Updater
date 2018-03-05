@@ -6,7 +6,7 @@
 
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
-SCRIPTNAME="update_btdx.sh"
+SCRIPTNAME="./update_btdx.sh"
 ARGS="$@"
 BRANCH="master"
 
