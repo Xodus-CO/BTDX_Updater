@@ -8,7 +8,7 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 SCRIPTNAME="update_btdx.sh"
 ARGS="$@"
-BRANCH="https://github.com/Xodus-CO/BTDX_Updater/"
+BRANCH="https://raw.githubusercontent.com/Xodus-CO/BTDX_Updater/master/"
 
 self_update() {
     cd $SCRIPTPATH
