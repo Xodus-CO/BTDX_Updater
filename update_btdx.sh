@@ -4,31 +4,6 @@
 # !! THIS SCRIPT NEED TO RUN AS ROOT !!
 ######################################################################
 
-SCRIPT=$(readlink -f "$0")
-SCRIPTPATH=$(dirname "$SCRIPT")
-SCRIPTNAME="./update_btdx.sh"
-ARGS="$@"
-BRANCH="master"
-
-self_update() {
-    cd $SCRIPTPATH
-    git fetch
-
-    [ -n $(git diff --name-only origin/$BRANCH | grep $SCRIPTNAME) ] && {
-        echo "Found a new version of this script, updating to latest version..."
-        git pull --force
-        git checkout $BRANCH
-        git pull --force
-        echo "Running the new version..."
-        exec "$SCRIPTNAME" "$@"
-
-        # Now exit this old instance
-        exit 1
-    }
-    echo "Already the latest version."
-}
-
-main() {
 
 
 clear
@@ -96,8 +71,3 @@ echo
 
 
 echo 'Masternode has been updated!'
-   echo "Running"
-}
-
-self_update
-main
